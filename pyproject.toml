@@ -1,15 +1,15 @@
 [project]
-name = "django_example_ynh"
+name = "germ_ynh"
 dynamic = ["version"]
 description = "Demo YunoHost Application to demonstrate the integration of a Django project under YunoHost."
 license = {text = "GPL-3.0-or-later"}
 readme = "README.md"
 authors = [
-    {name = 'Jens Diemer', email = 'django_example_ynh@jensdiemer.de'}
+    {name = 'Henri Dewilde', email = 'contact@henridewilde.fr'}
 ]
 requires-python = ">=3.9"  # Stay with 3.9 until YunoHost used >=Debian 11 (Bullseye)
 dependencies = [
-    "django_example>=0.1.0rc0",  # https://github.com/jedie/django_example
+    "germ@git+https://github.com/Bvr4/gestion-emprunt-et-reservation-materiel#egg=main",
     #
     # extras "ynh" will install: gunicorn, psycopg2, django-redis and django-axes
     # see: https://github.com/YunoHost-Apps/django_yunohost_integration/blob/main/pyproject.toml
@@ -54,12 +54,12 @@ dev = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/YunoHost-Apps/django_example_ynh"
-Source = "https://github.com/YunoHost-Apps/django_example_ynh"
+Documentation = "https://github.com/Bvr4/germ_ynh"
+Source = "https://github.com/Bvr4/germ_ynh"
 
 [project.scripts]
-django_example_ynh_app = "django_example_ynh.__main__:main"
-django_example_ynh_dev = "django_example_ynh.cli.dev:main"
+germ_ynh_app = "germ_ynh.__main__:main"
+germ_ynh_dev = "germ_ynh.cli.dev:main"
 
 [build-system]
 requires = ["setuptools>=61.0", "setuptools_scm>=7.1"]
@@ -67,10 +67,10 @@ build-backend = "setuptools.build_meta"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["django_example_ynh*"]
+include = ["germ_ynh*"]
 
 [tool.setuptools.dynamic]
-version = {attr = "django_example_ynh.__version__"}
+version = {attr = "germ_ynh.__version__"}
 
 
 [tool.darker]
@@ -97,7 +97,7 @@ log_level = "INFO"
 atomic=true
 profile='black'
 skip_glob=[".*", "*/htmlcov/*","*/migrations/*","*/local_test/*"]
-known_first_party=['django_example', 'django_example_ynh']
+known_first_party=['germ', 'germ_ynh']
 line_length=119
 lines_after_imports=2
 
@@ -158,28 +158,20 @@ initial_revision = "da47a1e"
 initial_date = 2022-11-06T17:25:53+01:00
 cookiecutter_template = "https://github.com/jedie/cookiecutter_templates/"
 cookiecutter_directory = "yunohost_django_package"
-applied_migrations = [
-    "4dbd146", # 2022-11-06T17:59:58+01:00
-    "baf1ebc", # 2022-11-30T21:19:10+01:00
-    "44aa620", # 2022-12-21T19:59:39+01:00
-    "b204761", # 2022-12-21T20:25:20+01:00
-    "fad909d", # 2023-08-22T19:20:34+02:00
-    "4abd4c0", # 2023-11-25T15:59:31+01:00
-]
+
 
 [manageprojects.cookiecutter_context.cookiecutter]
-project_name = "Django Example"
-full_name = "Jens Diemer"
-github_username = "jedie"
-author_email = "django_example_ynh@jensdiemer.de"
-upstream_pkg_name = "django_example"
-upstream_url = "https://github.com/jedie/django-example"
-ynh_app_pkg_name = "django_example_ynh"
-ynh_app_url = "https://github.com/YunoHost-Apps/django_example_ynh"
-bug_tracker_url = "https://github.com/jedie/django-example/issues"
-upstream_version = "0.1.0rc0"
-ynh_version = "1"
+project_name = "GERM"
+full_name = "Henri Dewilde"
+github_username = "Bvr4"
+author_email = "contact@henridewilde.fr"
+upstream_pkg_name = "germ"
+upstream_url = "https://github.com/Bvr4/gestion-emprunt-et-reservation-materiel"
+ynh_app_pkg_name = "germ_ynh"
+ynh_app_url = "https://github.com/Bvr4/germ_ynh"
+bug_tracker_url = "https://github.com/Bvr4/gestion-emprunt-et-reservation-materiel/issues"
+upstream_version = "0.1"
+ynh_version = "0.1"
 package_description = "Demo YunoHost Application to demonstrate the integration of a Django project under YunoHost."
 license = "GPL-3.0-or-later"
 _template = "https://github.com/jedie/cookiecutter_templates/"
-_output_dir = "~/repos_ynh/django_example_ynh"

@@ -4,7 +4,7 @@ from bx_py_utils.auto_doc import assert_readme_block
 from manageprojects.test_utils.click_cli_utils import invoke_click
 from manageprojects.tests.base import BaseTestCase
 
-from django_example_ynh.cli.dev import CLI_EPILOG, PACKAGE_ROOT, cli
+from germ_ynh.cli.dev import CLI_EPILOG, PACKAGE_ROOT, cli
 
 
 def assert_cli_help_in_readme(text_block: str, marker: str, readme_path: Path):

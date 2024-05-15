@@ -1,23 +1,22 @@
 # https://yunohost.org/en/packaging_manifest
 packaging_format = 2
 
-id = "django_example"
-name = "Django Example"
-description.en = "Application demonstrating the integration of a Django project under YunoHost"
-description.fr = "Application démontrant l'intégration d'un projet Django sous YunoHost"
+id = "germ"
+name = "GERM"
+description.en = "Web based tool to manage borrowing and reservation of equipments"
+description.fr = "Application web permettant la gestion des emprunts et réservations de matériels"
 
-version = "0.2.0~ynh3"
+version = "0.1"
 
-maintainers = ["Jens Diemer"]
+maintainers = ["Henri Dewilde"]
 
 
 [upstream]
 # https://yunohost.org/en/packaging_manifest#upstream-section
 license = "GPL-3.0-or-later"
-# website = "https://github.com/YunoHost-Apps/django_example_ynh" # If the app has no proper website, just remove the 'website' key entirely
 admindoc = "https://github.com/YunoHost-Apps/django_example_ynh"
 userdoc = "https://github.com/jedie/django-example"
-code = "https://github.com/YunoHost-Apps/django_example_ynh"
+code = "https://github.com/Bvr4/germ_ynh"
 
 
 
@@ -45,7 +44,7 @@ ram.runtime = "50M" # **estimate** minimum ram requirement. e.g. 50M, 400M, 1G, 
     # this is a generic question - ask strings are automatically handled by Yunohost's core
     # setting $path and template variable __PATH__
     type = "path"
-    default = "/django_example_ynh"
+    default = "/germ_ynh"
 
     [install.admin]
     # this is a generic question - ask strings are automatically handled by Yunohost's core

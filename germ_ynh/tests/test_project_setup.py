@@ -1,6 +1,6 @@
 import os
 
-from django_example_ynh.cli.dev import PACKAGE_ROOT
+from germ_ynh.cli.dev import PACKAGE_ROOT
 
 
 try:
@@ -15,7 +15,7 @@ from django_tools.unittest_utils.project_setup import check_editor_config
 from django_yunohost_integration.test_utils import assert_project_version
 
 from django_example import __version__ as upstream_version
-from django_example_ynh import __version__ as ynh_pkg_version
+from germ_ynh import __version__ as ynh_pkg_version
 
 
 def assert_file_contains_string(file_path, string):

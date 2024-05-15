@@ -18,13 +18,13 @@ from manageprojects.utilities.publish import publish_package
 from rich import print  # noqa; noqa
 from rich_click import RichGroup
 
-import django_example_ynh
+import germ_ynh
 
 
 logger = logging.getLogger(__name__)
 
 
-PACKAGE_ROOT = Path(django_example_ynh.__file__).parent.parent
+PACKAGE_ROOT = Path(germ_ynh.__file__).parent.parent
 assert_is_file(PACKAGE_ROOT / 'pyproject.toml')
 
 OPTION_ARGS_DEFAULT_TRUE = dict(is_flag=True, show_default=True, default=True)
@@ -45,7 +45,7 @@ ARGUMENT_NOT_EXISTING_DIR = dict(
 ARGUMENT_EXISTING_FILE = dict(
     type=click.Path(exists=True, file_okay=True, dir_okay=False, readable=True, path_type=Path)
 )
-CLI_EPILOG = 'Project Homepage: https://github.com/YunoHost-Apps/django_example_ynh'
+CLI_EPILOG = 'Project Homepage: https://github.com/Bvr4/germ_ynh'
 
 
 class ClickGroup(RichGroup):  # FIXME: How to set the "info_name" easier?
@@ -88,7 +88,7 @@ cli.add_command(coverage)
 @click.command()
 def install():
     """
-    Run pip-sync and install 'django_example_ynh' via pip as editable.
+    Run pip-sync and install 'germ_ynh' via pip as editable.
     """
     verbose_check_call('pip-sync', PACKAGE_ROOT / 'requirements.dev.txt')
     verbose_check_call('pip', 'install', '--no-deps', '-e', '.')
@@ -170,9 +170,9 @@ def publish():
         assert err.code == 0, f'Exit code is not 0: {err.code}'
 
     publish_package(
-        module=django_example_ynh,
+        module=germ_ynh,
         package_path=PACKAGE_ROOT,
-        distribution_name='django_example_ynh',
+        distribution_name='germ_ynh',
     )
 
 
@@ -184,7 +184,7 @@ cli.add_command(publish)
 @click.option('--verbose/--no-verbose', **OPTION_ARGS_DEFAULT_FALSE)
 def fix_code_style(color: bool = True, verbose: bool = False):
     """
-    Fix code style of all django_example_ynh source code files via darker
+    Fix code style of all germ_ynh source code files via darker
     """
     code_style.fix(package_root=PACKAGE_ROOT, color=color, verbose=verbose)
 
@@ -259,7 +259,7 @@ def _run_django_test_cli():
 
     django.setup()
 
-    os.chdir(Path(django_example_ynh.__file__).parent)
+    os.chdir(Path(germ_ynh.__file__).parent)
 
     test_command = DjangoTestCommand()
     test_command.run_from_argv(sys.argv)
@@ -347,7 +347,7 @@ cli.add_command(diffsettings)
 
 
 def main():
-    print_version(django_example_ynh)
+    print_version(germ_ynh)
 
     print(f'{sys.argv=}')
     if len(sys.argv) >= 2:
