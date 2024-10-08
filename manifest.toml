@@ -44,7 +44,7 @@ ram.runtime = "50M" # **estimate** minimum ram requirement. e.g. 50M, 400M, 1G, 
     # this is a generic question - ask strings are automatically handled by Yunohost's core
     # setting $path and template variable __PATH__
     type = "path"
-    default = "/germ_ynh"
+    default = "/germ"
 
     [install.admin]
     # this is a generic question - ask strings are automatically handled by Yunohost's core
@@ -55,21 +55,57 @@ ram.runtime = "50M" # **estimate** minimum ram requirement. e.g. 50M, 400M, 1G, 
     type = "group"
     default = "admins"
 
-    [install.default_from_email]
-    # Provides __DEFAULT_FROM_EMAIL__ in templates
-    ask.en = "Default email address to use for various automated emails."
-    type = "email"
-    example = "admin@example.com"
-
     [install.admin_email]
     # Provides __ADMIN_EMAIL__ in templates
     ask.en = "EMail address for error emails."
     type = "email"
     example = "admin@example.com"
 
+    [install.email_host]
+    # Provides __EMAIL_HOST__ in templates
+    ask.en = "email host for sending automated emails."
+    type = "url"
+    example = "email.hoster.com"
+    
+    [install.email_port]
+    # Provides __EMAIL_PORT__ in templates
+    ask.en = "email port for sending automated emails."
+    type = "number"
+    example = "587"
+
+    [install.email_host_user]
+    # Provides __EMAIL_HOST_USER__ in templates
+    ask.en = "email host user for sending automated emails."
+    type = "string"
+    example = "host_user"
+
+    [install.email_host_password]
+    # Provides __EMAIL_HOST_PASSWORD__ in templates
+    ask.en = "email host password for sending automated emails."
+    type = "string"
+    example = "password"
+
+    [install.default_from_email]
+    # Provides __DEFAULT_FROM_EMAIL__ in templates
+    ask.en = "Default email address to use for various automated emails."
+    type = "email"
+    example = "admin@example.com"
+
+    [install.dolibarr_api_key]
+    # Provides __DOLIBARR_API_KEY__ in templates
+    ask.en = "Dolibarr API key"
+    type = "string"
+    example = "apikey"
+
+    [install.dolibarr_api_url]
+    # Provides __DOLIBARR_API_URL__ in templates
+    ask.en = "Dolibarr API URL"
+    type = "url"
+    example = "https://dolibarr.yourdomain.org/api/index.php"
+
     [install.debug_enabled]
     # Provides __DEBUG_ENABLED__ in templates will be set to "0" or "1" string
-    ask.en = "Should be never enabled in production!"
+    ask.en = "Enable debug mode. Should be never enabled in production!"
     type = "boolean"
 
     [install.log_level]

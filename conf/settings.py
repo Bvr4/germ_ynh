@@ -45,7 +45,15 @@ DEBUG = DEBUG_ENABLED == '1'
 
 LOG_LEVEL = '__LOG_LEVEL__'
 ADMIN_EMAIL = '__ADMIN_EMAIL__'
+
+# GERM specific settings
+EMAIL_HOST = '__EMAIL_HOST__'
+EMAIL_PORT = '__EMAIL_PORT__'
+EMAIL_HOST_USER = '__EMAIL_HOST_USER__'
+EMAIL_HOST_PASSWORD = '__EMAIL_HOST_PASSWORD__'
 DEFAULT_FROM_EMAIL = '__DEFAULT_FROM_EMAIL__'
+DOLIBARR_API_KEY = '__DOLIBARR_API_KEY__'
+DOLIBARR_API_URL = '__DOLIBARR_API_URL__'
 
 
 # -----------------------------------------------------------------------------

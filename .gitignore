@@ -14,4 +14,5 @@ __pycache__
 !/doc/screenshots/.gitkeep
 
 secret.txt
+notes.txt
 /local_test/
