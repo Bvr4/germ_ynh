@@ -17,7 +17,7 @@ from django_yunohost_integration.secret_key import get_or_create_secret as __get
 
 
 # https://github.com/jedie/django-example
-from django_example.settings.prod import *  # noqa:F401,F403 isort:skip
+from germ.settings import *  # noqa:F401,F403 isort:skip
 
 
 from django_yunohost_integration.base_settings import LOGGING  # noqa:F401 isort:skip
@@ -142,10 +142,10 @@ ALLOWED_HOSTS = ['__DOMAIN__']
 CACHES = {
     'default': {
         'BACKEND': 'django_redis.cache.RedisCache',
-        'LOCATION': 'redis://127.0.0.1:6379/__REDIS_DB__',
+        #'LOCATION': 'redis://127.0.0.1:6379/__REDIS_DB__',
         # If redis is running on same host as Django Example, you might
         # want to use unix sockets instead:
-        # 'LOCATION': 'unix:///var/run/redis/redis.sock?db=1',
+        'LOCATION': 'unix:///var/run/redis/redis.sock?db=1',
         'OPTIONS': {
             'CLIENT_CLASS': 'django_redis.client.DefaultClient',
         },
@@ -174,7 +174,7 @@ MEDIA_ROOT = str(INSTALL_DIR_PATH / 'media')
 LOGGING['handlers']['log_file']['filename'] = str(LOG_FILE_PATH)
 
 # Example how to add logging to own app:
-LOGGING['loggers']['django_example'] = {
+LOGGING['loggers']['germ'] = {
     'handlers': ['syslog', 'log_file', 'mail_admins'],
     'propagate': False,
 }
