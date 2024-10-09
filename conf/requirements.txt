@@ -4,12 +4,14 @@
 #
 #    ./dev-cli.py update
 #
+amqp==5.2.0
 asgiref==3.7.2 
     # via django
 async-timeout==4.0.3
     # via
     #   django-example-ynh (pyproject.toml)
     #   redis
+billiard==4.2.0
 bleach==6.1.0 
     # via django-tools
 bx-django-utils==69
@@ -19,12 +21,20 @@ bx-py-utils==88
     #   bx-django-utils
     #   cli-base-utilities
     #   django-tools
+celery==5.3.6
+certifi==2024.2.2
+charset-normalizer==3.3.2
 cli-base-utilities==0.4.4 
     # via django-example-ynh (pyproject.toml)
 click==8.1.7
     # via
     #   cli-base-utilities
     #   rich-click
+click-didyoumean==0.3.0
+click-plugins==1.1.1
+click-repl==0.3.0
+cron-descriptor==1.4.3
+defusedxml==0.7.1
 colorlog==6.7.0
     # via django-yunohost-integration
 django==4.2.7
@@ -36,41 +46,51 @@ django==4.2.7
     #   django-yunohost-integration
 django-axes==6.1.1
     # via django-yunohost-integration
+django-celery-beat==2.5.0
 django-example==0.2.0
     # via django-example-ynh (pyproject.toml)
+django-filter==23.5
 django-redis==5.4.0
     # via django-yunohost-integration
+django-timezone-field==6.1.0
 django-tools==0.54.0 
     # via django-yunohost-integration
 django-yunohost-integration[ynh]==0.6.0
     # via
     #   django-example-ynh (pyproject.toml)
     #   django-yunohost-integration
+ezodf==0.3.2
 germ @ git+https://github.com/Bvr4/gestion-emprunt-et-reservation-materiel@main
-gunicorn==21.2.0
+gunicorn==22.0.0
     # via django-yunohost-integration
 icdiff==2.0.7
     # via django-tools
+idna==3.7
+kombu==5.3.5
+lxml==5.2.1
 markdown-it-py==3.0.0
     # via rich
 mdurl==0.1.2
     # via markdown-it-py
-packaging==23.2
-    # via
-    #   django-yunohost-integration
-    #   gunicorn
+odfpy==1.4.1
+packaging==24.0
 pprintpp==0.4.0
     # via django-tools
+prompt-toolkit==3.0.43
 psycopg2==2.9.9
     # via django-yunohost-integration
 pygments==2.17.2
     # via rich
 python-stdnum==1.19
     # via bx-django-utils
+python-crontab==3.0.0
+python-dateutil==2.8.2
+python-dotenv==1.0.1
 pyyaml==6.0.1
     # via django-yunohost-integration
 redis==5.0.1
     # via django-redis
+requests==2.31.0
 rich==13.7.0
     # via
     #   cli-base-utilities
@@ -87,6 +107,10 @@ typing-extensions==4.8.0
     # via
     #   asgiref
     #   rich-click
+tzdata==2023.4
+urllib3==2.2.1
+vine==5.1.0
+wcwidth==0.2.13
 webencodings==0.5.1
     # via bleach
 
